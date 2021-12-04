@@ -43,7 +43,7 @@ export default defineComponent( {
               <field-player-component :player="lineUp[1]"></field-player-component>
               <field-player-component :player="lineUp[4]"></field-player-component>
             </div>
-            <div class="row justify-between" style="margin-top: 10vw">
+            <div class="row justify-between" style="margin-top: 3vw">
               <field-player-component :player="lineUp[7]"></field-player-component>
               <field-player-component :player="lineUp[5]"></field-player-component>
               <field-player-component :player="lineUp[6]"></field-player-component>
