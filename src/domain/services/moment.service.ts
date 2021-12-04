@@ -4,7 +4,7 @@ const timeStamp = Date.now();
 
 const formattedFullDateSTimeString = () => {
   return {
-    date   : date.formatDate( timeStamp, "DD-MMM-YYYY" ),
+    date   : date.formatDate( timeStamp, "DD MMM YYYY" ),
     dayWeek: date.formatDate( timeStamp, "dddd" )
   };
 };

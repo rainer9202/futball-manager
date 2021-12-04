@@ -1,103 +1,68 @@
+import { ref, onMounted } from "vue";
+import { useRoute }       from "vue-router";
+
 import { players } from "src/infrastructure/data/players";
 
 export default function UseShowPlayerComposable() {
 
+  /************  Private initialization   ************/
+  const $route  = useRoute();
+  const routeId = $route.params.id;
+
   /************  Variables   ************/
-  const metaData = { title: "Players", titleTemplate: ( title: any ) => `${ title } - Football Manager` };
-  const columns  = [
-    {
-      name    : "number",
-      required: true,
-      label   : "#",
-      align   : "left",
-      field   : ( row: { player_number: any; } ) => row.player_number,
-      sortable: true
-    },
-    {
-      name    : "name",
-      required: true,
-      label   : "PLAYER",
-      align   : "left",
-      field   : ( row: { player_name: any; } ) => row.player_name,
-      sortable: true
-    },
-    {
-      name    : "inf",
-      required: true,
-      label   : "INF",
-      align   : "left",
-      field   : ( row: { inf: any; } ) => row.inf,
-      sortable: true
-    },
-    {
-      name    : "position",
-      required: true,
-      label   : "POS",
-      align   : "left",
-      field   : ( row: { player_type: any; } ) => row.player_type,
-      sortable: true
-    },
-    {
-      name    : "age",
-      required: true,
-      label   : "AGE",
-      align   : "left",
-      field   : ( row: { player_age: any; } ) => row.player_age,
-      sortable: true
-    },
-    {
-      name    : "match_played",
-      required: true,
-      label   : "MATCH PLAYED",
-      align   : "left",
-      field   : ( row: { player_match_played: any; } ) => row.player_match_played,
-      sortable: true
-    },
-    {
-      name    : "goals",
-      required: true,
-      label   : "GOALS",
-      align   : "left",
-      field   : ( row: { player_goals: any; } ) => row.player_goals,
-      sortable: true
-    },
-    {
-      name    : "condition_form",
-      required: true,
-      label   : "COND / FORM",
-      align   : "left",
-      field   : ( row: { player_condition: any; } ) => row.player_condition,
-      sortable: true
-    },
-    {
-      name    : "yellow_red",
-      required: true,
-      label   : "YELLOW / RED",
-      align   : "left",
-      field   : ( row: { player_yellow_cards: any; } ) => row.player_yellow_cards,
-      sortable: true
-    },
-    {
-      name    : "captain",
-      required: true,
-      label   : "CAP",
-      align   : "left",
-      field   : ( row: { player_captain: any; } ) => row.player_captain,
-      sortable: true
-    },
-    {
-      name    : "rating_average",
-      required: true,
-      label   : "RAT",
-      align   : "left",
-      field   : ( row: { player_rating_average: any; } ) => row.player_rating_average,
-      sortable: true
-    }
-  ];
-  const rows     = players;
+  const metaData      = { title: "Player Details", titleTemplate: ( title: any ) => `${ title } - Football Manager` };
+  // @ts-ignore
+  const player        = players.find( player => player.player_key === parseInt( routeId ) );
+  const playerDetails = {
+    technical: [
+      { label: "Corners", value: 10, active: false },
+      { label: "Crossing", value: 11, active: false },
+      { label: "Dribbling", value: 13, active: true },
+      { label: "Finishing", value: 19, active: true },
+      { label: "First Touch", value: 14, active: true },
+      { label: "Free Kick", value: 13, active: false },
+      { label: "Heading", value: 12, active: false },
+      { label: "Long Shots", value: 12, active: true },
+      { label: "Long Throws", value: 5, active: false },
+      { label: "Marking", value: 12, active: false },
+      { label: "Passing", value: 15, active: true },
+      { label: "Penalty", value: 7, active: false },
+      { label: "Tackling", value: 15, active: true },
+      { label: "Technique", value: 15, active: true }
+    ],
+    mental   : [
+      { label: "Aggression", value: 13, active: true },
+      { label: "Anticipation", value: 15, active: true },
+      { label: "Bravery", value: 15, active: false },
+      { label: "Composure", value: 12, active: true },
+      { label: "Concentration", value: 11, active: false },
+      { label: "Decisions", value: 13, active: true },
+      { label: "Determination", value: 14, active: false },
+      { label: "Flair", value: 13, active: false },
+      { label: "Leadership", value: 6, active: true },
+      { label: "Off the ball", value: 14, active: true },
+      { label: "Positioning", value: 14, active: true },
+      { label: "Teamwork", value: 17, active: true },
+      { label: "Vision", value: 15, active: false },
+      { label: "Work Rate", value: 17, active: true }
+    ],
+    physical : [
+      { label: "Acceleration", value: 15, active: true },
+      { label: "Agility", value: 14, active: false },
+      { label: "Balance", value: 12, active: true },
+      { label: "Jumping", value: 12, active: false },
+      { label: "Natural Fitness", value: 13, active: false },
+      { label: "Pace", value: 13, active: true },
+      { label: "Stamina", value: 15, active: true },
+      { label: "Strength", value: 12, active: true },
+      { label: "Height", value: "185 cm", active: false },
+      { label: "Weight", value: "68 kg", active: false }
+    ]
+  };
+
   return {
     metaData,
-    columns,
-    rows
+    player,
+    playerDetails
   };
 }

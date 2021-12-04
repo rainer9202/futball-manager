@@ -19,7 +19,7 @@ export default defineComponent( {
 </script>
 
 <template>
-  <q-page class="">
+  <q-page class="q-pa-sm">
     <transition appear enter-active-class="animated fadeIn">
       <div class="row">
         <div class="col-12">

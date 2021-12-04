@@ -16,7 +16,8 @@ export const players = [
     "player_form"          : 90,
     "player_condition"     : 90,
     "player_rating_average": 8.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/242_m-ter-stegen.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/242_m-ter-stegen.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 1828145132,
@@ -111,7 +112,8 @@ export const players = [
     "player_form"          : 70,
     "player_condition"     : 60,
     "player_rating_average": 7.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/80967_s-dest.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/80967_s-dest.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 56358264,
@@ -149,7 +151,9 @@ export const players = [
     "player_form"          : 85,
     "player_condition"     : 80,
     "player_rating_average": 9.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/74089_r-araujo.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/74089_r-araujo.jpg",
+    "headline"             : true,
+
   },
   {
     "player_key"           : 1598806572,
@@ -171,6 +175,26 @@ export const players = [
     "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/20981_c-lenglet.jpg"
   },
   {
+    "player_key"           : 2725548385,
+    "player_name"          : "Eric García",
+    "player_number"        : "24",
+    "player_country"       : null,
+    "player_type"          : "Defenders",
+    "player_type_min"      : "DF",
+    "player_age"           : "20",
+    "player_match_played"  : "10",
+    "player_goals"         : "0",
+    "player_yellow_cards"  : "2",
+    "player_red_cards"     : "1",
+    "player_injured"       : 0,
+    "player_captain"       : 0,
+    "player_form"          : 90,
+    "player_condition"     : 85,
+    "player_rating_average": 8.5,
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/74849_eric-garcia.jpg",
+    "headline"             : true,
+  },
+  {
     "player_key"           : 2589928287,
     "player_name"          : "Jordi Alba",
     "player_number"        : "18",
@@ -187,7 +211,8 @@ export const players = [
     "player_form"          : 80,
     "player_condition"     : 85,
     "player_rating_average": 8.5,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/100270_jordi-alba.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/100270_jordi-alba.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 3235331239,
@@ -227,25 +252,7 @@ export const players = [
     "player_rating_average": 7.0,
     "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/9621_s-umtiti.jpg"
   },
-  {
-    "player_key"           : 2725548385,
-    "player_name"          : "Eric García",
-    "player_number"        : "24",
-    "player_country"       : null,
-    "player_type"          : "Defenders",
-    "player_type_min"      : "DF",
-    "player_age"           : "20",
-    "player_match_played"  : "10",
-    "player_goals"         : "0",
-    "player_yellow_cards"  : "2",
-    "player_red_cards"     : "1",
-    "player_injured"       : 0,
-    "player_captain"       : 0,
-    "player_form"          : 90,
-    "player_condition"     : 85,
-    "player_rating_average": 8.5,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/74849_eric-garcia.jpg"
-  },
+
   {
     "player_key"           : 2867336882,
     "player_name"          : "Óscar Mingueza",
@@ -301,7 +308,8 @@ export const players = [
     "player_form"          : 80,
     "player_condition"     : 85,
     "player_rating_average": 9.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/100271_sergio-busquets.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/100271_sergio-busquets.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 3544593437,
@@ -320,7 +328,8 @@ export const players = [
     "player_form"          : 75,
     "player_condition"     : 80,
     "player_rating_average": 7.5,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/88933_riqui-puig.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/88933_riqui-puig.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 1208647927,
@@ -377,7 +386,8 @@ export const players = [
     "player_form"          : 90,
     "player_condition"     : 90,
     "player_rating_average": 9.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/57744_f-de-jong.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/57744_f-de-jong.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 2690268063,
@@ -396,7 +406,7 @@ export const players = [
     "player_form"          : 90,
     "player_condition"     : 90,
     "player_rating_average": 9.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/100265_nico-gonzalez.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/100265_nico-gonzalez.jpg",
   },
   {
     "player_key"           : 3730351229,
@@ -453,7 +463,8 @@ export const players = [
     "player_form"          : 85,
     "player_condition"     : 85,
     "player_rating_average": 8.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/42287_o-dembele.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/42287_o-dembele.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 2003280452,
@@ -472,7 +483,8 @@ export const players = [
     "player_form"          : 85,
     "player_condition"     : 85,
     "player_rating_average": 8.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/10342_m-depay.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/10342_m-depay.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 1829011096,
@@ -491,7 +503,8 @@ export const players = [
     "player_form"          : 85,
     "player_condition"     : 85,
     "player_rating_average": 6.0,
-    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/100266_ansu-fati.jpg"
+    "player_image"         : "https:\/\/apiv2.allsportsapi.com\/logo\/players\/100266_ansu-fati.jpg",
+    "headline"             : true,
   },
   {
     "player_key"           : 2551134378,

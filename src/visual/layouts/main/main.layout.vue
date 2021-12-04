@@ -36,8 +36,9 @@ export default defineComponent( {
             </q-avatar>
           </q-item-section>
           <q-item-section>
-            <q-item-label class="text-body1 text-bold text-uppercase">Tactics</q-item-label>
-            <q-item-label class="text-caption text-grey-4 text-bold">6th in Championship &emsp; Next Match: Real Madrid
+            <q-item-label class="text-body1 text-bold text-uppercase">FC. BARCELONA</q-item-label>
+            <q-item-label class="text-caption text-grey-4 ">
+              FM Inside - Barcelona (ID: 12254556985)
             </q-item-label>
           </q-item-section>
         </q-item>
@@ -46,10 +47,10 @@ export default defineComponent( {
           <q-item dense class="rounded-borders btn-size-lg">
             <q-item-section class="text-right">
               <q-item-label class="text-grey-3 text-uppercase text-bold">{{ date }}</q-item-label>
-              <q-item-label class="text-caption text-grey-4  text-bold">{{ dayWeek }}</q-item-label>
+              <q-item-label class="text-caption text-grey-4  text-bold">{{ dayWeek }} 0:00</q-item-label>
             </q-item-section>
           </q-item>
-          <q-item dense class="bg-blue-9 rounded-borders btn-size-lg" clickable v-ripple>
+          <q-item disable dense class="bg-blue-9 rounded-borders btn-size-lg" clickable v-ripple>
             <q-item-section class="text-center">
               <q-item-label class="text-grey-2 text-uppercase text-bold">Continue</q-item-label>
             </q-item-section>
@@ -63,7 +64,7 @@ export default defineComponent( {
 
     <q-drawer
       v-model="leftMenuState"
-      :width="280"
+      :width="250"
       class="bg-secondary"
     >
       <q-scroll-area class="fit">
@@ -72,7 +73,9 @@ export default defineComponent( {
     </q-drawer>
 
     <q-page-container>
-      <router-view/>
+      <div>
+        <router-view/>
+      </div>
     </q-page-container>
   </q-layout>
 </template>

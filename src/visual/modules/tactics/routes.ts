@@ -13,12 +13,20 @@ const routes: RouteRecordRaw[] = [
       ]
     },
     children : [
-      { path: "overview", name: "TacticsOverviewPage", component: () => import("./pages/overview/overview.page.vue") },
-      { path: "players", name: "TacticsPlayersPage", component: () => import("./pages/players/index/players.page.vue") },
       {
-        path     : "players/player/:id",
-        name     : "TacticsShowPlayerPage",
+        path     : "overview",
+        name     : "TacticsOverviewPage",
+        component: () => import("./pages/overview/overview.page.vue")
+      },
+      {
+        path     : "players",
+        name     : "TacticsPlayersPage",
         component: () => import("./pages/players/index/players.page.vue")
+      },
+      {
+        path     : "players/:id/player",
+        name     : "TacticsShowPlayerPage",
+        component: () => import("./pages/players/show/showPlayer.page.vue")
       }
     ]
   }

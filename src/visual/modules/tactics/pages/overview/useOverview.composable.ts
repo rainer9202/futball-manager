@@ -1,55 +1,72 @@
-import { players } from "../../../../../infrastructure/data/players";
+import { ref, reactive } from "vue";
+import { players }       from "src/infrastructure/data/players";
 
 export default function UseOverviewComposable() {
-
   /************  Variables   ************/
   const metaData = { title: "Overview", titleTemplate: ( title: any ) => `${ title } - Football Manager` };
-  const columns  = [
-    {
-      name    : "name",
-      required: true,
-      label   : "PLAYER",
-      align   : "left",
-      field   : ( row: { player_name: any; } ) => row.player_name,
-      sortable: true
-    },
-    {
-      name    : "inf",
-      required: true,
-      label   : "INF",
-      align   : "left",
-      field   : ( row: { inf: any; } ) => row.inf,
-      sortable: true
-    },
-    {
-      name    : "position",
-      required: true,
-      label   : "POS",
-      align   : "left",
-      field   : ( row: { player_type: any; } ) => row.player_type,
-      sortable: true
-    },
-    {
-      name    : "condition_form",
-      required: true,
-      label   : "COND / FORM",
-      align   : "left",
-      field   : ( row: { player_condition: any; } ) => row.player_condition,
-      sortable: true
-    },
-    {
-      name    : "rating_average",
-      required: true,
-      label   : "RAT",
-      align   : "left",
-      field   : ( row: { player_rating_average: any; } ) => row.player_rating_average,
-      sortable: true
+  // @ts-ignore
+  const lineUp   = ref( players.filter( player => player.headline ) );
+  const bench    = ref( players.filter( player => !player.headline ) );
+  const player   = ref( {} );
+
+  /************  Methods   ************/
+  const handleDragEnd = ( item: object ) => {
+    const playerStatic = player.value;
+    const playerPicked = item;
+
+    // @ts-ignore
+    if ( lineUp.value.indexOf( playerPicked ) !== -1 && lineUp.value.indexOf( playerStatic ) !== -1 ) {
+      // @ts-ignore
+      const indexPlayerPicker         = lineUp.value.indexOf( playerPicked );
+      // @ts-ignore
+      const indexPlayerStatic         = lineUp.value.indexOf( playerStatic );
+      // @ts-ignore
+      lineUp.value[indexPlayerPicker] = playerStatic;
+      // @ts-ignore
+      lineUp.value[indexPlayerStatic] = playerPicked;
     }
-  ];
-  const rows     = players;
+    // @ts-ignore
+    else if ( bench.value.indexOf( playerPicked ) !== -1 && bench.value.indexOf( playerStatic ) !== -1 ) {
+      // @ts-ignore
+      const indexPlayerPicker        = bench.value.indexOf( playerPicked );
+      // @ts-ignore
+      const indexPlayerStatic        = bench.value.indexOf( playerStatic );
+      // @ts-ignore
+      bench.value[indexPlayerPicker] = playerStatic;
+      // @ts-ignore
+      bench.value[indexPlayerStatic] = playerPicked;
+    }
+    // @ts-ignore
+    else if ( lineUp.value.indexOf( playerPicked ) !== -1 && bench.value.indexOf( playerStatic ) !== -1 ) {
+      // @ts-ignore
+      const indexPlayerPicker         = lineUp.value.indexOf( playerPicked );
+      // @ts-ignore
+      const indexPlayerStatic         = bench.value.indexOf( playerStatic );
+      // @ts-ignore
+      lineUp.value[indexPlayerPicker] = playerStatic;
+      // @ts-ignore
+      bench.value[indexPlayerStatic]  = playerPicked;
+    } else {
+      // @ts-ignore
+      const indexPlayerPicker         = bench.value.indexOf( playerPicked );
+      // @ts-ignore
+      const indexPlayerStatic         = lineUp.value.indexOf( playerStatic );
+      // @ts-ignore
+      lineUp.value[indexPlayerStatic] = playerPicked;
+      // @ts-ignore
+      bench.value[indexPlayerPicker]  = playerStatic;
+    }
+  };
+
+  const handleDragEnter = ( item: object ) => {
+    player.value = item;
+  };
+
   return {
     metaData,
-    columns,
-    rows
+    lineUp,
+    bench,
+    handleDragEnd,
+    handleDragEnter
   };
 }

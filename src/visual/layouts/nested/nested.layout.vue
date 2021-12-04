@@ -37,7 +37,7 @@ export default defineComponent( {
       <q-btn round icon="mdi-account-cog" flat class="text-grey-9"></q-btn>
     </div>
   </q-toolbar>
-  <div class="q-pa-md">
+  <div class="q-pa-sm">
     <router-view/>
   </div>
 </template>
