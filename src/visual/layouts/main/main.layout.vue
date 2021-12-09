@@ -1,19 +1,19 @@
 <script lang="ts">
-import { defineComponent, ref, watch } from "vue";
+import {defineComponent} from "vue";
 
 import useMainLayoutComposable from "./useMainLayout.composable";
 // Local components
-import LeftMenuComponent       from "./components/left-menu/leftMenuComponents.vue";
+import LeftMenuComponent from "./components/left-menu/leftMenuComponents.vue";
 
-export default defineComponent( {
+export default defineComponent({
   components: {
     LeftMenuComponent
   },
   setup() {
-    const { leftMenuState, date, dayWeek } = useMainLayoutComposable();
-    return { leftMenuState, date, dayWeek };
+    const {leftMenuState, date, dayWeek} = useMainLayoutComposable();
+    return {leftMenuState, date, dayWeek};
   }
-} );
+});
 </script>
 
 <template>
@@ -21,43 +21,41 @@ export default defineComponent( {
     <q-header>
       <q-toolbar class="text-grey-3 q-py-xs toolbar">
         <q-btn
-          flat
-          dense
-          round
-          icon="menu"
           aria-label="Menu"
+          dense
+          flat
+          icon="menu"
+          round
           @click="leftMenuState = !leftMenuState"
         />
 
         <q-item>
           <q-item-section avatar>
-            <q-avatar rounded color="black">
-              <q-img src="../../assets/images/FCBarcelonaShield.png" alt="Shield Team"></q-img>
+            <q-avatar rounded>
+              <q-img alt="Shield Team" src="../../assets/shields/ShieldSquadDefault.png"></q-img>
             </q-avatar>
           </q-item-section>
           <q-item-section>
-            <q-item-label class="text-body1 text-bold text-uppercase">FC. BARCELONA</q-item-label>
-            <q-item-label class="text-caption text-grey-4 ">
-              FM Inside - Barcelona (ID: 12254556985)
+            <q-item-label class="text-body1 text-bold text-uppercase">FC. TEAM</q-item-label>
+            <q-item-label class="text-caption text-grey-5">
+              FM Inside - FC. TEAM (ID: 12254556985)
             </q-item-label>
           </q-item-section>
         </q-item>
         <q-space></q-space>
         <div class="row items-center q-gutter-x-sm">
-          <q-item dense class="rounded-borders btn-size-lg">
-            <q-item-section class="text-right">
-              <q-item-label class="text-grey-3 text-uppercase text-bold">{{ date }}</q-item-label>
-              <q-item-label class="text-caption text-grey-4  text-bold">{{ dayWeek }} 0:00</q-item-label>
+          <q-item dense>
+            <q-item-section class="text-left">
+              <q-item-label class="text-grey-2 text-bold text-caption text-uppercase">{{ date }}</q-item-label>
+              <q-item-label class="text-caption text-grey-5 text-bold">{{ dayWeek }}</q-item-label>
             </q-item-section>
           </q-item>
-          <q-item disable dense class="bg-blue-9 rounded-borders btn-size-lg" clickable v-ripple>
-            <q-item-section class="text-center">
-              <q-item-label class="text-grey-2 text-uppercase text-bold">Continue</q-item-label>
-            </q-item-section>
-            <q-item-section side>
-              <q-icon name="mdi-chevron-right" color="white"></q-icon>
-            </q-item-section>
-          </q-item>
+        </div>
+        <div class="row items-center q-gutter-x-sm q-ml-lg">
+          <q-btn flat icon="mdi-view-dashboard" round></q-btn>
+          <q-btn flat icon="mdi-help-circle" round></q-btn>
+          <q-btn flat icon="mdi-earth" round></q-btn>
+          <q-btn flat icon="mdi-account" round></q-btn>
         </div>
       </q-toolbar>
     </q-header>
