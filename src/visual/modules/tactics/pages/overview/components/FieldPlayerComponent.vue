@@ -1,37 +1,34 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
 
-export default defineComponent( {
+export default defineComponent({
   props: {
+    teamName: {
+      type: String,
+      required: true
+    },
     player: {
-      type    : Object,
+      type: Object,
       required: true
     }
   }
-} );
+});
 </script>
 
 <template>
-  <div class="row">
-    <div class="col-12">
-      <div class="row justify-center">
-        <q-avatar rounded size="60px">
-          <q-img :src="player.player_image"></q-img>
-        </q-avatar>
-      </div>
-    </div>
-    <div class="col-12 q-pt-sm">
-      <div class="row justify-center">
-        <q-item-label>
-          <strong>{{ player.player_number }}. {{ player.player_name }}</strong>
+  <div class="row justify-center">
+    <q-avatar color="white" size="lg">
+      <img :src="player.player_image">
+    </q-avatar>
+  </div>
+  <div class="row justify-center">
+    <q-item class="q-px-none q-mt-sm bg-dark q-px-md q-py-xs rounded-borders" dense>
+      <q-item-section>
+        <q-item-label caption class="text-grey-3 text-center">{{ player.player_name }}
         </q-item-label>
-      </div>
-      <div class="row justify-center">
-        <q-item-label caption>
-          {{ player.player_type }}
-        </q-item-label>
-      </div>
-    </div>
+        <q-item-label caption class="text-center text-bold text-green-14">Barcelona</q-item-label>
+      </q-item-section>
+    </q-item>
   </div>
 </template>
 

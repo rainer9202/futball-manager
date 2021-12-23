@@ -5,7 +5,7 @@ import {useMeta} from "quasar";
 
 export default defineComponent({
   setup() {
-    const metaData = {title: "Sign In", titleTemplate: (title: string) => `${title} - Football Planing`};
+    const metaData = {title: "Sign In", titleTemplate: (title: string) => `${title} - Football Planning`};
     const $router = useRouter();
     const email = ref("myemail@manager.com");
     const password = ref("password");
@@ -40,8 +40,8 @@ export default defineComponent({
     <q-page-container>
       <q-page>
         <div class="row">
-          <div class="col-7 col-lg-8 left-container">
-            <div class="q-pa-lg" style="position: absolute; bottom: 0">
+          <div class="col-7 col-lg-7 col-xl-8 left-container">
+            <div class="q-pa-md" style="position: absolute; bottom: 0">
               <q-item>
                 <q-item-section avatar>
                   <q-avatar font-size="45px" icon="mdi-alert-box" size="45px" text-color="brown-1"></q-avatar>
@@ -57,7 +57,7 @@ export default defineComponent({
               </q-item>
             </div>
           </div>
-          <div class="col-5 col-lg-4 q-pa-xl bg-grey-1" style="padding-top: 10vh">
+          <div class="col-5 col-lg-5 q-pa-lg bg-grey-1" style="padding-top: 10vh">
             <div class="row q-pa-md">
               <q-img alt="Logo Web" src="../../assets/logos/logo_large.png" style="width: 200px;"></q-img>
             </div>

@@ -24,16 +24,16 @@ export default defineComponent({
             <div class="col-4 q-pa-sm">
               <q-item v-ripple class="rounded-borders q-pa-md" clickable style="border: 1px solid #323248;">
                 <q-item-section avatar class="q-px-lg">
-                  <q-avatar color="yellow" font-size="40px" icon="mdi-cash-usd" size="60px"
+                  <q-avatar color="yellow" font-size="40px" icon="mdi-calendar" size="60px"
                             text-color="dark"></q-avatar>
                 </q-item-section>
                 <q-item-section>
                   <q-item-label class="text-grey-7 text-caption text-uppercase text-bold text-body2">
-                    COINS
+                    games
                   </q-item-label>
                   <q-item-label class="text-yellow text-h5 text-bold">1502</q-item-label>
                   <q-item-label class="text-grey-7 text-caption text-bold text-body2">
-                    Coins earned by your team
+                    Count games this season
                   </q-item-label>
                 </q-item-section>
               </q-item>

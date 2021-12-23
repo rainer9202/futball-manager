@@ -62,7 +62,7 @@ export default defineComponent({
 
     <q-drawer
       v-model="leftMenuState"
-      :width="250"
+      :width="220"
       class="bg-secondary"
     >
       <q-scroll-area class="fit">
